@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOmCnqEu92Fr1Mu4mxK.woff2)
+    format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmWUlfBBc4.woff2)
+    format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+/* font-face - from google-fonts */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+/* background-images for divs */
+.rose {
+  background-image: url('https://cdn.pixabay.com/photo/2019/12/02/17/56/bud-4668335_960_720.jpg');
+}
+.winter {
+  background-image: url('https://cdn.pixabay.com/photo/2019/12/08/19/50/winter-4682051_960_720.jpg');
+}
+.heart {
+  background-image: url('https://cdn.pixabay.com/photo/2015/12/19/20/32/paper-1100254_960_720.jpg');
+}
+.skye {
+  background-image: url('https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_960_720.jpg');
+}
+.watch {
+  background-image: url('https://cdn.pixabay.com/photo/2021/12/19/10/42/old-6880626_960_720.jpg');
+}
+/* container for panel */
+.container {
+  display: flex;
+  width: 25vw;
+  justify-content: center;
+  align-items: center;
+}
+.panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 50px;
+  flex: 0.5;
+  color: white;
+  margin-right: 10px;
+  position: relative;
+  transition: flex 0.7s ease-in;
+}
+.panel h3 {
+  position: absolute;
+  bottom: 113px;
+  font-size: 25px;
+  opacity: 0;
+}
+/* class for Javascript to be added and removed */
+.panel.active {
+  flex: 5;
+}
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+/* media queries  */
+@media (max-width: 480px) {
+  .container {
+    width: 100vw;
+    margin: 5px;
+  }
+  .panel:nth-child(4),
+  .panel:nth-child(5) {
+    display: none;
+  }
+}
